@@ -1,4 +1,5 @@
-module.exports = function wibble(string) {
-    if (typeof string !== "string") throw new TypeError("Wants a string");
-    return string.replace(/\s/g, "wibble");
-}
+const getLicense = require('./licenses/getLicense.js');
+
+const wibbleString = getLicense(someText);
+
+console.log(wibbleString);
