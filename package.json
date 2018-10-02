@@ -1,6 +1,6 @@
 {
     "name": "@opusno111/licenseadder",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Add license headers to various files",
     "license": "MIT",
     "repository": "opusno111/licenseadder",
