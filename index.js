@@ -12,4 +12,4 @@
 
 // const wibbleString = getLicense(conArgv[0]);
 
-console.log(wibbleString);
+console.log("hello world");
