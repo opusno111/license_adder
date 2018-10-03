@@ -6,9 +6,9 @@ const getJsLicense = require('./licenses/getJsLicense.js');
 
 prompt.start()
 
-prompt.get('licenseType', function (err, result)) {
+prompt.get('licenseType', function (err, result) {
     console.info(result);
-}
+});
 
 // const licenseType = alert('Enter license type ...');
 // const briefDescription = alert('Enter brief description of app ...');
