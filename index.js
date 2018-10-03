@@ -6,7 +6,7 @@ const program = require('commander');
 
 const getLicense = require('./licenses/getLicense.js');
 
-const conArgv = ['mit', 'Anonymous', 'wibble description'];
+const conArgv = ['agpl', 'Anonymous', 'wibble description'];
 
 const name = '';
 
