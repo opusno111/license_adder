@@ -17,7 +17,7 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     licenseType = result.licenseType;
     briefDescription = result.briefDescription;
     firstname = result.firstname;
-    surname = result.surname;
+    surname = result.lastname;
     console.info(licenseType);
     console.info(briefDescription);
     console.info(firstname);
