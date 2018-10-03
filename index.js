@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const { prompt } = require('inquirer');
+const prompt = require('inquirer');
 const program = require('commander');
 
-const { getJsLicense } = require('./licenses/getJsLicense.js');
+const getJsLicense = require('./licenses/getJsLicense.js');
 
 program
     .version('2.15.0')
