@@ -2,13 +2,13 @@
 const date = new Date().getFullYear();
 
 const agpl = (firstname, lastname, briefDescription) => {
-    return `/**
-        *${briefDescription}
-        *Copyright (C) ${date}  ${firstname} ${lastname}
-        *
-        *You should have received a copy of the GNU Affero General Public License
-        *along with this program.  If not, see <http://www.gnu.org/licenses/>.
-        */
+    return `
+        // ${briefDescription}
+        // Copyright (C) ${date}  ${firstname} ${lastname}
+        //
+        // You should have received a copy of the GNU Affero General Public License
+        // along with this program.  If not, see <http://www.gnu.org/licenses/>.
+        //
     `
 }
 
