@@ -11,6 +11,8 @@ const briefDescription = '';
 const firstname = '';
 const lastname = '';
 
+const licenseText = '';
+
 prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], function (err, result) {
     licenseType = result.licenseType;
     briefDescription = result.briefDescription;
@@ -20,8 +22,8 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     console.info(briefDescription);
     console.info(firstname);
     console.info(lastname);
-    
-    const licenseText = getJsLicense(licenseType, briefDescription, firstname, lastname);
+
+    licenseText = getJsLicense(licenseType, briefDescription, firstname, lastname);
     
     console.info(licenseText);
 });
