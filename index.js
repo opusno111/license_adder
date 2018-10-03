@@ -2,8 +2,6 @@
 
 const program = require('commander');
 
-
-
 const getLicense = require('./licenses/getLicense.js');
 
 const conArgv = ['agpl', 'Anonymous', 'wibble description'];

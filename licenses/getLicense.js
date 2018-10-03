@@ -26,7 +26,7 @@ module.exports = function getLicense(license, name, briefDescription) {
     switch (license){
         case 'mit': return mit(name);
         case 'apache': return apache(name);
-        case 'agpl': return agpl(name);
+        case 'agpl': return agpl(name, briefDescription);
         default: return agpl(name);
     }
 }
