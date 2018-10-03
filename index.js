@@ -3,6 +3,7 @@
 const prompt = require('prompt');
 const program = require('commander');
 const getJsLicenseHeader = require('./licenses/getJsLicenseHeader.js');
+const getCsharpLicenseHeader = require('./licenses/getCsharpLicenseHeader.js');
 
 prompt.start()
 
@@ -25,7 +26,7 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     console.info(lastname);
 
     jsHJeaderLicenseText = getJsLicenseHeader(licenseType, briefDescription, firstname, lastname);
-    cSharpHJeaderLicenseText = getJsLicenseHeader(licenseType, briefDescription, firstname, lastname);
+    cSharpHJeaderLicenseText = getCsharpLicenseHeader(licenseType, briefDescription, firstname, lastname);
     
     console.info(jsHJeaderLicenseText);
     console.info(cSharpHJeaderLicenseText);
