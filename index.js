@@ -31,7 +31,7 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     console.info(jsHJeaderLicenseText);
     console.info(cSharpHJeaderLicenseText);
 
-    appendJsHeader.appendJsHeader(jsHJeaderLicenseText);
+    appendJsHeader(jsHJeaderLicenseText);
 });
 
 // const licenseType = alert('Enter license type ...');
