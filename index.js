@@ -6,16 +6,22 @@ const program = require('commander');
 
 const getLicense = require('./licenses/getLicense.js');
 
-const conArgv = ['mit', 'Anonymous'];
+const conArgv = ['mit', 'Anonymous', 'wibble description'];
+
+const name = '';
+
+const briefDescription = '';
 
 let argv = process
     .argv
-    .slice(2);
+    .slice(3);
 
 if (argv.length === 0) {
     argv = conArgv;
+} else {
+
 }
 
-const wibbleString = getLicense(conArgv[0]);
+const license = getLicense(conArgv[0], conArgv[1], conArgv[2]);
 
-console.info("hello world");
+console.info(license);
