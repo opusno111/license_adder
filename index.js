@@ -11,7 +11,7 @@ const briefDescription = '';
 const firstname = '';
 const lastname = '';
 
-const licenseText = '';
+let licenseText = '';
 
 prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], function (err, result) {
     licenseType = result.licenseType;
