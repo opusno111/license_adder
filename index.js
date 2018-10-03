@@ -1,3 +1,5 @@
+const helloWorld = "hello world";
+
 // const getLicense = require('./licenses/getLicense.js');
 
 // const conArgv = ['mit', 'Anonymous'];
@@ -12,4 +14,4 @@
 
 // const wibbleString = getLicense(conArgv[0]);
 
-console.log("hello world");
+// console.log("hello world");
