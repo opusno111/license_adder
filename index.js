@@ -2,7 +2,7 @@
 
 const prompt = require('prompt');
 const program = require('commander');
-const getJsLicense = require('./licenses/getJsLicense.js');
+const getJsLicenseHeader = require('./licenses/getJsLicenseHeader.js');
 
 prompt.start()
 
@@ -11,7 +11,8 @@ let briefDescription = '';
 let firstname = '';
 let lastname = '';
 
-let licenseText = '';
+let jsHJeaderLicenseText = '';
+let cSharpHJeaderLicenseText = '';
 
 prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], function (err, result) {
     licenseType = result.licenseType;
@@ -23,9 +24,11 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     console.info(firstname);
     console.info(lastname);
 
-    licenseText = getJsLicense(licenseType, briefDescription, firstname, lastname);
+    jsHJeaderLicenseText = getJsLicenseHeader(licenseType, briefDescription, firstname, lastname);
+    cSharpHJeaderLicenseText = getJsLicenseHeader(licenseType, briefDescription, firstname, lastname);
     
-    console.info(licenseText);
+    console.info(jsHJeaderLicenseText);
+    console.info(cSharpHJeaderLicenseText);
 });
 
 // const licenseType = alert('Enter license type ...');

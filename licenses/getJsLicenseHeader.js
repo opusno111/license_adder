@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const date = new Date().getFullYear();
 
-const agplJs = (firstname, lastname, briefDescription) => {
+const agpl = (firstname, lastname, briefDescription) => {
     return `/**
         *${briefDescription}
         *Copyright (C) ${date}  ${firstname} ${lastname}
@@ -12,11 +12,11 @@ const agplJs = (firstname, lastname, briefDescription) => {
     `
 }
 
-module.exports = function getJsLicense(license, briefDescription, firstname, lastname) {
+module.exports = function getJsLicenseHeader(license, briefDescription, firstname, lastname) {
     switch (license){
         case 'mit': return mit(firstname, lastname, briefDescription);
         case 'apache': return apache(firstname, lastname, briefDescription);
-        case 'agpl': return agplJs(firstname, lastname, briefDescription);
-        default: return agplJs(firstname, lastname, briefDescription);
+        case 'agpl': return agpl(firstname, lastname, briefDescription);
+        default: return agpl(firstname, lastname, briefDescription);
     }
 }
