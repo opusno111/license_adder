@@ -4,6 +4,7 @@ const prompt = require('prompt');
 const getJsLicenseHeader = require('./licenses/getJsLicenseHeader.js');
 const getCsharpLicenseHeader = require('./licenses/getCsharpLicenseHeader.js');
 const appendJsHeader = require('./utils/appendJsFiles.js');
+const appendCsharpHeader = require('./utils/appendCsharpFiles.js');
 
 prompt.start()
 
@@ -32,6 +33,7 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     console.info(cSharpHJeaderLicenseText);
 
     appendJsHeader(jsHJeaderLicenseText);
+    appendCsharpHeader(cSharpHJeaderLicenseText);
 });
 
 // const licenseType = alert('Enter license type ...');
