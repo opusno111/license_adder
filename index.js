@@ -6,10 +6,10 @@ const getJsLicense = require('./licenses/getJsLicense.js');
 
 prompt.start()
 
-const licenseType = '';
-const briefDescription = '';
-const firstname = '';
-const lastname = '';
+let licenseType = '';
+let briefDescription = '';
+let firstname = '';
+let lastname = '';
 
 let licenseText = '';
 
