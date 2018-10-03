@@ -1,6 +1,6 @@
 {
     "name": "license-adder",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "description": "Add license headers to various files",
     "license": "MIT",
     "repository": "opusno111/licenseadder",
