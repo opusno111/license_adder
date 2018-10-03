@@ -10,5 +10,8 @@
         "adder"
     ],
     "bin": "./index.js",
-    "dependencies": {}
+    "dependencies": {
+        "commander": "^2.18.0",
+        "inquirer": "^6.2.0"
+    }
 }

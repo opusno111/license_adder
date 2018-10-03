@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-const helloWorld = "hello world";
+const program = require('commander');
+
+
 
 const getLicense = require('./licenses/getLicense.js');
 
@@ -16,4 +18,4 @@ if (argv.length === 0) {
 
 const wibbleString = getLicense(conArgv[0]);
 
-console.log("hello world");
+console.info("hello world");
