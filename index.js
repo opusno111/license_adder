@@ -1,18 +1,23 @@
 #!/usr/bin/env node
 
-const prompt = require('inquirer');
+const prompt = require('prompt');
 const program = require('commander');
-
 const getJsLicense = require('./licenses/getJsLicense.js');
 
-const licenseType = alert('Enter license type ...');
-const briefDescription = alert('Enter brief description of app ...');
-const firstname = alert('Enter first name ...');
-const lastname = alert('Enter last name ...');
+prompt.start()
 
-const licenseText = getJsLicense(licenseType, briefDescription, firstname, lastname);
+prompt.get('licenseType', function (err, result)) {
+    console.info(result);
+}
 
-console.prompt(licenseText);
+// const licenseType = alert('Enter license type ...');
+// const briefDescription = alert('Enter brief description of app ...');
+// const firstname = alert('Enter first name ...');
+// const lastname = alert('Enter last name ...');
+
+// const licenseText = getJsLicense(licenseType, briefDescription, firstname, lastname);
+
+console.info(licenseText);
 
 
 

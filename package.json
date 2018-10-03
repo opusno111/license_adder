@@ -12,6 +12,7 @@
     "bin": "./index.js",
     "dependencies": {
         "commander": "^2.18.0",
-        "inquirer": "^6.2.0"
+        "inquirer": "^6.2.0",
+        "prompt": "^1.0.0"
     }
 }
