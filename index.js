@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const helloWorld = "hello world";
 
 // const getLicense = require('./licenses/getLicense.js');
