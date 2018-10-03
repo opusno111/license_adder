@@ -9,8 +9,6 @@
         "license",
         "adder"
     ],
-    "bin": {
-        "wibble": "./index.js"
-    },
+    "bin": "./index.js",
     "dependencies": {}
 }
