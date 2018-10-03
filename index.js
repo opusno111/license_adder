@@ -11,23 +11,14 @@ const briefDescription = '';
 const firstname = '';
 const lastname = '';
 
-prompt.get('Enter license type ...', function (err, result) {
-    licenseType = result;
+prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], function (err, result) {
+    licenseType = result.licenseType;
+    briefDescription = result.briefDescription;
+    firstname = result.firstname;
+    surname = result.surname;
     console.info(licenseType);
-});
-
-prompt.get('Enter brief description of app ...', function (err, result) {
-    briefDescription = result;
     console.info(briefDescription);
-});
-
-prompt.get('Enter first name ...', function (err, result) {
-    firstname = result;
     console.info(firstname);
-});
-
-prompt.get('Enter last name ...', function (err, result) {
-    lastname = result;
     console.info(lastname);
 });
 
