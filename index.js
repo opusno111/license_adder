@@ -17,7 +17,7 @@ prompt.get('licenseType', function (err, result) {
 
 // const licenseText = getJsLicense(licenseType, briefDescription, firstname, lastname);
 
-console.info(licenseText);
+// console.info(licenseText);
 
 
 
