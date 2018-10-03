@@ -1,4 +1,4 @@
-const getLicense = require('./licenses/getLicense.js');
+// const getLicense = require('./licenses/getLicense.js');
 
 const conArgv = ['mit', 'Anonymous'];
 
