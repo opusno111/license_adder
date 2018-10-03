@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const find = require('find');
-const removeNodeModules = require('./utils/removeNodeModules.js');
+const removeNodeModules = require('./removeNodeModules');
 
 const appendFiles = (licenseHeader) => {
     find.file(/\.js$/, process.cwd(), (files) => {
