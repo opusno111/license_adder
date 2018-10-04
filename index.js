@@ -17,18 +17,18 @@ const createMitLicense = require('./create-license-txt-files/createMitLicense.js
 prompt.start()
 
 prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], function (err, result) {
-    licenseType = result.licenseType;
-    briefDescription = result.briefDescription;
-    firstname = result.firstname;
-    lastname = result.lastname;
+    const licenseType = result.licenseType;
+    const briefDescription = result.briefDescription;
+    const firstname = result.firstname;
+    const lastname = result.lastname;
 
     // Create header for all the different file type
     // Headers for .html .xml .xaml .config
-    htmlHeaderLicenseText = getHtmlLicenseHeader(licenseType, briefDescription, firstname, lastname);
+    const htmlHeaderLicenseText = getHtmlLicenseHeader(licenseType, briefDescription, firstname, lastname);
     // Headers for .cs .ts .js .css .scss .sass
-    cSharpHeaderLicenseText = getCsharpLicenseHeader(licenseType, briefDescription, firstname, lastname);
+    const cSharpHeaderLicenseText = getCsharpLicenseHeader(licenseType, briefDescription, firstname, lastname);
     // Headers for .sql
-    sqlHeaderLicenseText = getSqlLicenseHeader(licenseType, briefDescription, firstname, lastname);
+    const sqlHeaderLicenseText = getSqlLicenseHeader(licenseType, briefDescription, firstname, lastname);
 
     // Append headers created above to appropiate file types
     appendJsTsCsharpFiles(cSharpHeaderLicenseText);
