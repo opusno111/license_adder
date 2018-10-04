@@ -206,7 +206,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 `;
 
-let filePath = process.cwd() + '/LICENSE.lic';
+let filePath = process.cwd() + '/LICENSE.txt';
 
 const createLicense = () => {
     fs.writeFile(filePath, licenseText);

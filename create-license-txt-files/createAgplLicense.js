@@ -666,7 +666,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 <https://www.gnu.org/licenses/>.
 `;
 
-let filePath = process.cwd() + '/LICENSE.lic';
+let filePath = process.cwd() + '/LICENSE.txt';
 
 const createLicense = () => {
     fs.writeFile(filePath, licenseText);
