@@ -29,9 +29,10 @@ SOFTWARE.
 let filePath = process.cwd() + '/LICENSE.txt';
 
 const createLicense = () => {
-    fs.writeFile(filePath, licenseText);
+    fs.writeFile(filePath, licenseText)
+    .then(() => console.info('File success!'))
+    .catch(err => console.error(err));
 }
-
 
 module.exports = function createMitLicense() {
     return createLicense();
