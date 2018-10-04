@@ -16,15 +16,6 @@ const createMitLicense = require('./create-license-txt-files/createMitLicense.js
 
 prompt.start()
 
-let licenseType = '';
-let briefDescription = '';
-let firstname = '';
-let lastname = '';
-
-let htmlHeaderLicenseText = '';
-let cSharpHeaderLicenseText = '';
-let sqlHeaderLicenseText = '';
-
 prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], function (err, result) {
     licenseType = result.licenseType;
     briefDescription = result.briefDescription;
