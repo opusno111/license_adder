@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 
 const prompt = require('prompt');
+
 const getHtmlLicenseHeader = require('./licenses/getHtmlLicenseHeader.js');
 const getCsharpLicenseHeader = require('./licenses/getCsharpLicenseHeader.js');
+const getSqlLicenseHeader = require('./licenses/getSqlLicenseHeader.js');
+
 const appendJsTsCsharpFiles = require('./utils/appendJsTsCsharpFiles.js');
 const appendHtmlXmlXamlFiles = require('./utils/appendHtmlFiles.js');
 const appendSqlFiles = require('./utils/appendSqlFiles.js');
@@ -23,7 +26,7 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     briefDescription = result.briefDescription;
     firstname = result.firstname;
     lastname = result.lastname;
-    
+
     console.info(licenseType);
     console.info(briefDescription);
     console.info(firstname);
