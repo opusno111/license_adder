@@ -38,12 +38,14 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     appendHtmlXmlXamlFiles(htmlHeaderLicenseText);
     appendSqlFiles(sqlHeaderLicenseText);
 
+    console.info('licenseType: ', licenseType);
+
     switch (licenseType){
         case 'agpl':
             fs.copy('/license-headers/AGPL3', process.cwd())
             .then(() => console.info('Success file copy!'))
             .catch(err => console.error(err))
-        default: return agpl(firstname, lastname, briefDescription);
+        default: return;
     }
 });
 
