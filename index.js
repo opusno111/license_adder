@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const prompt = require('prompt');
-const fs = require('fs-extra');
 
 const getHtmlLicenseHeader = require('./license-headers/getHtmlLicenseHeader.js');
 const getCsharpLicenseHeader = require('./license-headers/getCsharpLicenseHeader.js');
@@ -11,7 +10,7 @@ const appendJsTsCsharpFiles = require('./utils/appendJsTsCsharpFiles.js');
 const appendHtmlXmlXamlFiles = require('./utils/appendHtmlFiles.js');
 const appendSqlFiles = require('./utils/appendSqlFiles.js');
 
-
+const createAgplLicense = require('./create-license-txt-files/createAgplLicense.js');
 
 prompt.start()
 
@@ -42,9 +41,7 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
 
     switch (licenseType){
         case 'agpl':
-            fs.copy('/license-headers/AGPL3', process.cwd())
-            .then(() => console.info('Success file copy!'))
-            .catch(err => console.error(err))
+            createAgplLicense();
         default: return;
     }
 });
