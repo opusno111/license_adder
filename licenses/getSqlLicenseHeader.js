@@ -3,24 +3,24 @@ const date = new Date().getFullYear();
 
 const mit = (firstname, lastname, briefDescription) => {
     return `-- ${briefDescription}
-    -- Copyright (C) ${date}  ${firstname} ${lastname}
-    -- You should have received a copy of the GNU Affero General Public License
-    -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    `
+-- Copyright (C) ${date}  ${firstname} ${lastname}
+-- You should have received a copy of the GNU Affero General Public License
+-- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+`
 }
 const apache = (firstname, lastname, briefDescription) => {
     return `-- ${briefDescription}
-    -- Copyright (C) ${date}  ${firstname} ${lastname}
-    -- You should have received a copy of the GNU Affero General Public License
-    -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    `
+-- Copyright (C) ${date}  ${firstname} ${lastname}
+-- You should have received a copy of the GNU Affero General Public License
+-- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+`
 }
 const agpl = (firstname, lastname, briefDescription) => {
     return `-- ${briefDescription}
-    -- Copyright (C) ${date}  ${firstname} ${lastname}
-    -- You should have received a copy of the GNU Affero General Public License
-    -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    `
+-- Copyright (C) ${date}  ${firstname} ${lastname}
+-- You should have received a copy of the GNU Affero General Public License
+-- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+`
 }
 
 module.exports = function getSqlLicenseHeader(license, briefDescription, firstname, lastname) {
