@@ -48,11 +48,11 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     // Can't find a full length version of MIT license so I assume what is added to each file is enough?
     switch (licenseType){
         case 'agpl':
-            createAgplLicense();
+            return createAgplLicense();
         case 'apache':
-            createApacheLicense();
+            return createApacheLicense();
         case 'mit':
-            createMitLicense();
+            return createMitLicense();
         default: return;
     }
 });
