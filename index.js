@@ -39,12 +39,10 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     appendSqlFiles(sqlHeaderLicenseText);
 
     switch (licenseType){
-        case 'agpl': try {
-            await fs.copy('/license-headers/AGPL3', process.cwd())
-            console.info('Copied License File Success!')
-        } catch (err) {
-            console.error(err)
-        }
+        case 'agpl':
+            fs.copy('/license-headers/AGPL3', process.cwd())
+            .then(() => console.info('Success file copy!'))
+            .catch(err => console.error(err))
         default: return agpl(firstname, lastname, briefDescription);
     }
 });
