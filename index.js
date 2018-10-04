@@ -45,7 +45,6 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     appendSqlFiles(sqlHeaderLicenseText);
 
     // Create full license text file in directory where command is run
-    // Can't find a full length version of MIT license so I assume what is added to each file is enough?
     switch (licenseType){
         case 'agpl':
             return createAgplLicense();

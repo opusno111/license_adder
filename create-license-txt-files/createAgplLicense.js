@@ -675,6 +675,6 @@ const createLicense = () => {
 }
 
 module.exports = function createAgplLicense() {
-    return createLicense();
+    createLicense();
 }
 

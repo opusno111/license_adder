@@ -35,5 +35,5 @@ const createLicense = () => {
 }
 
 module.exports = function createMitLicense() {
-    return createLicense();
+    createLicense();
 }

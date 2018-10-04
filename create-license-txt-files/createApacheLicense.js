@@ -215,6 +215,6 @@ const createLicense = () => {
 }
 
 module.exports = function createApacheLicense() {
-    return createLicense();
+    createLicense();
 }
 
