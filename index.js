@@ -11,6 +11,8 @@ const appendHtmlXmlXamlFiles = require('./utils/appendHtmlFiles.js');
 const appendSqlFiles = require('./utils/appendSqlFiles.js');
 
 const createAgplLicense = require('./create-license-txt-files/createAgplLicense.js');
+const createApacheLicense = require('./create-license-txt-files/createApacheLicense.js');
+const createMitLicense = require('./create-license-txt-files/createMitLicense.js');
 
 prompt.start()
 
@@ -29,19 +31,28 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     firstname = result.firstname;
     lastname = result.lastname;
 
+    // Create header for all the different file type
+    // Headers for .html .xml .xaml .config
     htmlHeaderLicenseText = getHtmlLicenseHeader(licenseType, briefDescription, firstname, lastname);
+    // Headers for .cs .ts .js .css .scss .sass
     cSharpHeaderLicenseText = getCsharpLicenseHeader(licenseType, briefDescription, firstname, lastname);
+    // Headers for .sql
     sqlHeaderLicenseText = getSqlLicenseHeader(licenseType, briefDescription, firstname, lastname);
 
+    // Append headers created above to appropiate file types
     appendJsTsCsharpFiles(cSharpHeaderLicenseText);
     appendHtmlXmlXamlFiles(htmlHeaderLicenseText);
     appendSqlFiles(sqlHeaderLicenseText);
 
-    console.info('licenseType: ', licenseType);
-
+    // Create full license text file in directory where command is run
+    // Can't find a full length version of MIT license so I assume what is added to each file is enough?
     switch (licenseType){
         case 'agpl':
             createAgplLicense();
+        case 'apache':
+            createApacheLicense();
+        case 'mit':
+            createMitLicense();
         default: return;
     }
 });
