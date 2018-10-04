@@ -209,7 +209,10 @@ limitations under the License.
 let filePath = process.cwd() + '/LICENSE.txt';
 
 const createLicense = () => {
-    fs.unlink(filePath);
+    fs.unlink(filePath, (err) => {
+        if (err) throw err;
+        console.log('path/file.txt was deleted: ', filePath);
+      });
     fs.writeFile(filePath, licenseText);
 }
 
