@@ -165,7 +165,7 @@ You should also get your employer (if you work as a programmer) or school, if an
 
 `;
 
-let filePath = process.cwd() + 'LICENSE.txt';
+let filePath = process.cwd() + '/LICENSE.txt';
 
 const createLicense = () => {
     fs.writeFile(filePath, licenseText);
