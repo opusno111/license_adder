@@ -29,7 +29,7 @@ SOFTWARE.
 let filePath = process.cwd() + '/LICENSE.txt';
 
 const createLicense = () => {
-    fs.writeFile(filePath, '');
+    fs.unlink(filePath);
     fs.writeFile(filePath, licenseText);
 }
 

@@ -669,7 +669,7 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 let filePath = process.cwd() + '/LICENSE.txt';
 
 const createLicense = () => {
-    fs.writeFile(filePath, '');
+    fs.unlink(filePath);
     fs.writeFile(filePath, licenseText);
 }
 
