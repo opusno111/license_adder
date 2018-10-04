@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 const prompt = require('prompt');
-const getJsLicenseHeader = require('./licenses/getJsLicenseHeader.js');
+const getHtmlLicenseHeader = require('./licenses/getHtmlLicenseHeader.js');
 const getCsharpLicenseHeader = require('./licenses/getCsharpLicenseHeader.js');
 const appendJsTsCsharpFiles = require('./utils/appendJsTsCsharpFiles.js');
+const appendHtmlXmlXamlFiles = require('./utils/appendHtmlFiles.js');
 
 prompt.start()
 
@@ -12,8 +13,8 @@ let briefDescription = '';
 let firstname = '';
 let lastname = '';
 
-let jsHJeaderLicenseText = '';
-let cSharpHJeaderLicenseText = '';
+let jsHeaderLicenseText = '';
+let cSharpHeaderLicenseText = '';
 
 prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], function (err, result) {
     licenseType = result.licenseType;
@@ -25,19 +26,16 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     console.info(firstname);
     console.info(lastname);
 
-    jsHJeaderLicenseText = getJsLicenseHeader(licenseType, briefDescription, firstname, lastname);
-    cSharpHJeaderLicenseText = getCsharpLicenseHeader(licenseType, briefDescription, firstname, lastname);
+    htmlHeaderLicenseText = getHtmlLicenseHeader(licenseType, briefDescription, firstname, lastname);
+    cSharpHeaderLicenseText = getCsharpLicenseHeader(licenseType, briefDescription, firstname, lastname);
     
-    console.info(jsHJeaderLicenseText);
-    console.info(cSharpHJeaderLicenseText);
+    console.info(htmlHeaderLicenseText);
+    console.info(cSharpHeaderLicenseText);
 
-    appendJsTsCsharpFiles(cSharpHJeaderLicenseText);
+    appendJsTsCsharpFiles(cSharpHeaderLicenseText);
+    appendHtmlXmlXamlFiles(htmlHeaderLicenseText);
 });
 
-// const licenseType = alert('Enter license type ...');
-// const briefDescription = alert('Enter brief description of app ...');
-// const firstname = alert('Enter first name ...');
-// const lastname = alert('Enter last name ...');
 
 
 
