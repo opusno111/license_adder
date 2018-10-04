@@ -1,14 +1,17 @@
 #!/usr/bin/env node
 
 const prompt = require('prompt');
+const fs = require('fs-extra');
 
-const getHtmlLicenseHeader = require('./licenses/getHtmlLicenseHeader.js');
-const getCsharpLicenseHeader = require('./licenses/getCsharpLicenseHeader.js');
-const getSqlLicenseHeader = require('./licenses/getSqlLicenseHeader.js');
+const getHtmlLicenseHeader = require('./license-headers/getHtmlLicenseHeader.js');
+const getCsharpLicenseHeader = require('./license-headers/getCsharpLicenseHeader.js');
+const getSqlLicenseHeader = require('./license-headers/getSqlLicenseHeader.js');
 
 const appendJsTsCsharpFiles = require('./utils/appendJsTsCsharpFiles.js');
 const appendHtmlXmlXamlFiles = require('./utils/appendHtmlFiles.js');
 const appendSqlFiles = require('./utils/appendSqlFiles.js');
+
+
 
 prompt.start()
 
@@ -27,11 +30,6 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     firstname = result.firstname;
     lastname = result.lastname;
 
-    console.info(licenseType);
-    console.info(briefDescription);
-    console.info(firstname);
-    console.info(lastname);
-
     htmlHeaderLicenseText = getHtmlLicenseHeader(licenseType, briefDescription, firstname, lastname);
     cSharpHeaderLicenseText = getCsharpLicenseHeader(licenseType, briefDescription, firstname, lastname);
     sqlHeaderLicenseText = getSqlLicenseHeader(licenseType, briefDescription, firstname, lastname);
@@ -39,7 +37,19 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     appendJsTsCsharpFiles(cSharpHeaderLicenseText);
     appendHtmlXmlXamlFiles(htmlHeaderLicenseText);
     appendSqlFiles(sqlHeaderLicenseText);
+
+    switch (licenseType){
+        case 'agpl': try {
+            await fs.copy('/license-headers/AGPL3', process.cwd())
+            console.info('Copied License File Success!')
+        } catch (err) {
+            console.error(err)
+        }
+        default: return agpl(firstname, lastname, briefDescription);
+    }
 });
+
+
 
 
 
