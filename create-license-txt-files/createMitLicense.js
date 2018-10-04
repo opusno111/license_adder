@@ -30,7 +30,6 @@ let filePath = process.cwd() + '/LICENSE.txt';
 
 const createLicense = () => {
     fs.writeFile(filePath, licenseText);
-    fs.close();
 }
 
 
