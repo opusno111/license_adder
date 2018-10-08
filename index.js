@@ -22,6 +22,10 @@ prompt.get(['licenseType', 'briefDescription', 'firstname', 'lastname'], functio
     const firstname = result.firstname;
     const lastname = result.lastname;
 
+    if (!licenseType || !briefDescription || !firstname) {
+        console.info(`License type, brief description of App and firstname are required to create header!`)
+        return;
+    }
     // Create header for all the different file type
     // Headers for .html .xml .xaml .config
     const htmlHeaderLicenseText = getHtmlLicenseHeader(licenseType, briefDescription, firstname, lastname);
