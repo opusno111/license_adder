@@ -4,7 +4,7 @@ const find = require('find');
 const prepend = require('prepend-file');
 const removeNodeModules = require('./removeNodeModules');
 
-const appendFiles = (licenseHeader) => {
+const appendJsTsCsharpFiles = (licenseHeader) => {
     find.file(/\.((ts)|(js)|(cs)|(css)|(scss)|(sass))$/i, process.cwd(), (files) => {
         let JSfiles = removeNodeModules(files);
         JSfiles.forEach((fileName) => {
@@ -15,6 +15,4 @@ const appendFiles = (licenseHeader) => {
     });
 }
 
-module.exports = function appendJsTsCsharpFiles(licenseHeader) {
-    return appendFiles(licenseHeader);
-}
+module.exports = appendJsTsCsharpFiles;

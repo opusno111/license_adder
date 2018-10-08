@@ -4,7 +4,7 @@ const find = require('find');
 const prepend = require('prepend-file');
 const removeNodeModules = require('./removeNodeModules');
 
-const appendFiles = (licenseHeader) => {
+const appendSqlFiles = (licenseHeader) => {
     find.file(/\.((sql))$/i, process.cwd(), (files) => {
         let JSfiles = removeNodeModules(files);
         JSfiles.forEach((fileName) => {
@@ -13,9 +13,7 @@ const appendFiles = (licenseHeader) => {
             })
         });
     })
-
 }
 
-module.exports = function appendSqlFiles(licenseHeader) {
-    return appendFiles(licenseHeader);
-}
+module.exports = appendSqlFiles;
+   
