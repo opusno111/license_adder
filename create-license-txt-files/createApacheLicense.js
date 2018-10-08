@@ -210,7 +210,7 @@ let filePath = process.cwd() + '/LICENSE.txt';
 
 const createLicense = () => {
     fs.writeFile(filePath, licenseText)
-    .then(() => console.info('File success!'))
+    .then(() => console.info('Apache LICENSE.txt file successfully added to directory!'))
     .catch(err => console.error(err));
 }
 
