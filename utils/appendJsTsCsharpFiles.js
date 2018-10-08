@@ -10,9 +10,9 @@ const appendJsTsCsharpFiles = (licenseHeader) => {
         JSfiles.forEach((fileName) => {
             prepend(fileName, licenseHeader, (err) => {
                 if(err) {
-                    console.log('Error adding header: ', err);
+                    console.log(`ERROR adding header to: ${fileName}, Error:  ${err}`);
                 } else {
-                    console.info('Header added to: ', fileName);
+                    console.info('SUCCESS Header added to: ', fileName);
                 }
             });
         });
