@@ -35,11 +35,21 @@ Excludes adding header to files in 'node_modules' folder.
 
 Run 'license-adder' command in the terminal that is open in the directory that contains all your files that require license headers adding to them.
 
-Prompt answers required for the currently supported license types
+licenseType prompt answers required for the currently supported license types are:
 
-+ Enter 'mit' under the licenseType prompt.
-+ Enter 'apache' under the licenseType prompt.
-+ Enter 'agpl' under the licenseType prompt.
++ For MIT license enter 'mit' under the licenseType prompt.
++ For Apache license enter 'apache' under the licenseType prompt.
++ For AGPL license enter 'agpl' under the licenseType prompt.
+
+**If an unrecognised licenseType is entered then the header below is inserted as default:**
+
+```
+briefDescription
+Copyright (C) date(year)  firstname lastname
+
+See LICENSE in the project root for license information.
+```
+*Example of the prompts presented in the terminal:*
 
 ```
 prompt: licenseType:  mit
@@ -47,6 +57,7 @@ prompt: briefDescription:  App Description Goes Here
 prompt: firstname:  Enter First Name Here
 prompt: lastname:  Enter Last Name Here
 ```
+**licenseType, briefDescription and firstname prompts are mandatory, headers will not be applied without all of them.**
 
 # Example of headers added to file types
 
@@ -74,6 +85,8 @@ prompt: lastname:  Enter Last Name Here
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+// 
+// See LICENSE in the project root for license information.
 ```
 ## .html .xml .xaml .config
 ```
@@ -81,7 +94,9 @@ prompt: lastname:  Enter Last Name Here
 Copyright (C) 2018  firstname goes here lastname goes here
 
 You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+See LICENSE in the project root for license information. -->
 ```
 ## .sql
 ```
@@ -107,6 +122,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 -- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -- SOFTWARE.
+-- 
+-- See LICENSE in the project root for license information.
 ```
 
 

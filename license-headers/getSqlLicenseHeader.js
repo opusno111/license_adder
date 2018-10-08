@@ -24,6 +24,8 @@ const mit = (firstname, lastname, briefDescription) => {
 -- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -- SOFTWARE.
+-- 
+-- See LICENSE in the project root for license information.
 `
 }
 const apache = (firstname, lastname, briefDescription) => {
@@ -41,6 +43,8 @@ const apache = (firstname, lastname, briefDescription) => {
 -- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
+-- 
+-- See LICENSE in the project root for license information.
 `
 }
 const agpl = (firstname, lastname, briefDescription) => {
@@ -48,6 +52,15 @@ const agpl = (firstname, lastname, briefDescription) => {
 -- Copyright (C) ${date}  ${firstname} ${lastname}
 -- You should have received a copy of the GNU Affero General Public License
 -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-- 
+-- See LICENSE in the project root for license information.
+`
+}
+const copyrightOnly = (firstname, lastname, briefDescription) => {
+    return `-- ${briefDescription}
+-- Copyright (C) ${date}  ${firstname} ${lastname}
+-- 
+-- See LICENSE in the project root for license information.
 `
 }
 
@@ -56,6 +69,6 @@ module.exports = function getSqlLicenseHeader(license, briefDescription, firstna
         case 'mit': return mit(firstname, lastname, briefDescription);
         case 'apache': return apache(firstname, lastname, briefDescription);
         case 'agpl': return agpl(firstname, lastname, briefDescription);
-        default: return agpl(firstname, lastname, briefDescription);
+        default: return copyrightOnly(firstname, lastname, briefDescription);
     }
 }
