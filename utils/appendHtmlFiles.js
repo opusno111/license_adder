@@ -9,7 +9,11 @@ const appendHtmlFiles = (licenseHeader) => {
         let JSfiles = removeNodeModules(files);
         JSfiles.forEach((fileName) => {
             prepend(fileName, licenseHeader, (err) => {
-                console.log(err);
+                if(err) {
+                    console.log('Error adding header: ', err);
+                } else {
+                    console.info('Header added to: ', fileName);
+                }
             })
         });
     })
